@@ -95,4 +95,4 @@
 
 const createMenu = () => {};
 
-module.exports = createMenu;
+export default createMenu;

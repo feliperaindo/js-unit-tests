@@ -20,4 +20,4 @@
 
 const vqv = () => {};
 
-module.exports = vqv;
+export default vqv;

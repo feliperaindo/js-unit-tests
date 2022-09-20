@@ -13,4 +13,4 @@
 
 const average = () => {};
 
-module.exports = average;
+export default average;

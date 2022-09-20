@@ -17,4 +17,4 @@
 
 const createStudent = () => {};
 
-module.exports = createStudent;
+export default createStudent;
