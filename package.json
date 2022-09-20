@@ -29,5 +29,8 @@
   "devDependencies": {
     "eslint-config-trybe-fundamentals": "1.1.1",
     "jest": "24.9.0"
+  },
+  "dependencies": {
+    "@types/jest": "^29.0.3"
   }
 }

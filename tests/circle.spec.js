@@ -22,15 +22,44 @@ const circle = require('../src/circle');
 */
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
-  it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
-    fail('Teste vazio!');
+ 
     // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado possui 3 propriedades.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
-    // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
-    // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
-  });
+
+  // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
+  test('Verify return undefined in case parameter not be a number', () => {
+    expect(circle(' ')).toBeUndefined();
+  })
+
+  // Teste se circle retorna um objeto.
+  test('Verify return an object', () => {
+    expect(typeof circle(3)).toBe('object');
+  })
+
+  // Teste se o objeto retornado possui 3 propriedades.
+  test('Verify object return 3 keys', () => {
+    expect(circle(5)).toHaveProperty('area');
+    expect(circle(5)).toHaveProperty('circumference');
+    expect(circle(5)).toHaveProperty('radius');
+  })
+  
+  // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+  test('Verify return undefined when any parameter is received', () => {
+    expect(circle()).toBeUndefined();
+  })
+  
+  // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
+  test('Verify key and value circumference when parameter two is received', () => {
+    expect(circle(2).circumference).toBeCloseTo(12.56, 5);
+  })
+
+  // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
+  test('Verify key and value area when parameter three is received', () => {
+    expect(circle(3).area).toBeCloseTo(28.26, 5);
+  })
+  
+  // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
+  test('Verify all values when parameter three is received', () => {
+    expect(circle(3).circumference).toBeCloseTo(18.84, 5);
+    expect(circle(3).radius).toBe(3);
+  })
 });
