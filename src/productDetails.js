@@ -42,4 +42,4 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
-export default productDetails;
+module.exports = productDetails;

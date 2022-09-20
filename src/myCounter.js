@@ -26,4 +26,4 @@ const myCounter = () => {
   return myArray;
 };
 
-export default myCounter;
+module.exports = myCounter;

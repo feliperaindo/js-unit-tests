@@ -17,4 +17,4 @@ const numbers = (myArray) => {
   return true;
 };
 
-export default numbers;
+module.exports = numbers;
