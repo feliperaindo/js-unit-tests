@@ -66,5 +66,4 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   test('Verify both produts ends with 123', () => {
     expect(productDetails('pente', 'cabide')[0]['details']['productId']).toEqual(expect.stringContaining('123'));
   });
-
 });
