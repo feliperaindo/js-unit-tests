@@ -41,17 +41,6 @@ const calculator = (number1, number2) => ({
     sub: number1 - number2,
   });
 
-const arrayGenerator = (type, object) => {
-  switch (type) {
-    case 'keys': 
-      return Object.keys(object);
-    case 'values':
-      return Object.values(object);
-    case 'entries':
-      return Object.entries(object);
-    default:
-      return 'parâmetro inválido';
-  }
-};
+const arrayGenerator = (type, object) => Object[type](object);
 
 module.exports = { calculator, arrayGenerator };
