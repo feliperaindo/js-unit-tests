@@ -6,7 +6,7 @@ const createMenu = require('../src/restaurant');
 
   - Ler o menu cadastrado;
   - Fazer pedidos;
-  - Verificar o que foi pedido;
+  - Verificar o que foi pedido; 
   - Somar o valor da conta.
 
   A estrutura deste código e deste objeto já está definida e você precisa implementá-la.
