@@ -54,45 +54,69 @@
 
 */
 
-// PASSO 1: Crie uma função `createMenu()` que, recebendo um objeto como parâmetro, retorna esse objeto no seguinte formato: 
-//  { fetchMenu: () => objetoPassadoPorParametro }.
-//
-// Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
+//------------------------------------------------------------------------------------------
+
+/* PASSO 1: Crie uma função `createMenu()` que, recebendo um objeto como parâmetro, retorna esse objeto no seguinte formato: 
+  { fetchMenu: () => objetoPassadoPorParametro }.
+  
+  Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
+*/
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 2: Adicione ao objeto retornado por `createMenu()` uma chave de nome `consumption` que, como valor inicial, tem um array vazio.
-//
-// Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
+/* PASSO 2: Adicione ao objeto retornado por `createMenu()` uma chave de nome `consumption` que, como valor inicial, tem um array vazio.
+  
+  Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
+*/
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, ao receber uma string como parâmetro, 
-// adiciona essa string ao array de `objetoRetornado.consumption`. Essa nova função será adicionada à chave `order`.
-// 
-// DICA PARA DESENVOLVIMENTO: 
-// - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
-// - E depois, definir essa nova função que será atribuída a `order`.
-// ```
-// const restaurant = {}
-//
-// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
-//
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
-// // Essa função deve ser associada à chave `order` de `restaurant`
-// ```
-// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
+/* PASSO 3: Crie uma função, separada da função `createMenu()`, que, ao receber uma string como parâmetro, 
+  adiciona essa string ao array de `objetoRetornado.consumption`. Essa nova função será adicionada à chave `order`.
+   
+  DICA PARA DESENVOLVIMENTO: 
+  - Definir a função `createMenu()`
+  - Definir o objeto que a `createMenu()` retorna, mas separadamente 
+  - E depois, definir essa nova função que será atribuída a `order`.
+
+  const restaurant = {}
+  
+  const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
+  
+  const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
+  Essa função deve ser associada à chave `order` de `restaurant`
+
+  Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
+*/
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` armazenando uma função
-// que:
-// - percorrerá item a item de `objetoRetornado.consumption`;
-// - fará a soma do preço desses itens;
-// - retornará o valor somado acrescido de 10%.
-// DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+/* PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` armazenando uma função
+  que:
+  - percorrerá item a item de `objetoRetornado.consumption`;
+  - fará a soma do preço desses itens;
+  - retornará o valor somado acrescido de 10%.
+ DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+*/
 
-const createMenu = () => {};
+function waiter(string) {
+  
+}
+
+function sum() {
+  return ;
+}
+
+const createMenu = (object) => { 
+  const menu = {
+    fetchmenu: object,
+    consumption: [],
+    order: waiter(),
+    pay: sum(),
+  };
+
+  return menu;
+};
+createMenu({ food: 'coxa', drink: 'água' });
 
 module.exports = createMenu;
