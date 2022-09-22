@@ -49,17 +49,17 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   
   // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
   test('Verify key and value circumference when parameter two is received', () => {
-    expect(circle(2).circumference).toBeCloseTo(12.56, 5);
+    expect(circle(2).circumference).toBeCloseTo(12.56, 3);
   })
 
   // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
   test('Verify key and value area when parameter three is received', () => {
-    expect(circle(3).area).toBeCloseTo(28.26, 5);
+    expect(circle(3).area).toBeCloseTo(28.26, 3);
   })
   
   // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
   test('Verify all values when parameter three is received', () => {
-    expect(circle(3).circumference).toBeCloseTo(18.84, 5);
+    expect(circle(3).circumference).toBeCloseTo(18.84, 3);
     expect(circle(3).radius).toBe(3);
   })
 });

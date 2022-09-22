@@ -85,7 +85,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
   // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
   test('Verify function "createMenu" return an object with key "consumption" with an empty array', () => {
     expect(Array.isArray(createMenu().consumption)).toBeTruthy();
-    expect(createMenu().consumption.length).toBe(0);
+    expect(createMenu().consumption).toHaveLength(0);
   })
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []

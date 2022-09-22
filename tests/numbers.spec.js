@@ -43,6 +43,6 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
 
   // Escreva um teste em que a função recebe [' '] e retorna false
   test('Verify if function `numbers` return `false` when an array [" "] is a parameter', () => {
-    expect(numbers([' '])).toBe(false);
+    expect(numbers([' '])).toBeFalsy();
   })
 });
