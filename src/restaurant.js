@@ -113,7 +113,10 @@ const checkMatch = (key, object) => {
 };
 
 const sum = (object) => {
-  const keys = Object.keys(object);
+  let keys; 
+  const checkKeys = (Object.keys(object))
+  ? keys = Object.keys(object)
+  : keys = 0;
   let total = 0;
 
   for (const i of keys) {
