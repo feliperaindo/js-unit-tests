@@ -155,7 +155,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     console.log(test);
     const array = ['coxa', 'asa', 'coxinha', 'brigadeiro', 'agua', 'refri', 'beer', 'beer']
     array.forEach( (i) => menu.order(i));
-    expect(menu.pay(menu.fetchmenu())).toBeCloseTo(45.1);
+    expect(menu.pay(menu.fetchmenu())).toBeCloseTo(45.1, 3);
   })
   
     // objetoRetornado.order('coxinha');
