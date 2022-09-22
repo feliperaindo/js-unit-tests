@@ -43,12 +43,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
 
   // Teste se o retorno da função é um array.
   test('Verify function return is an array', () => {
-    expect(Array.isArray(productDetails())).toBe(true);
+    expect(Array.isArray(productDetails())).toBeTruthy();
   });
 
   // Teste se o array retornado pela função contém dois itens dentro.
   test('Verify function return an array with two itens', () => {
-    expect(productDetails().length).toBe(2);
+    expect(productDetails()).toHaveLength(2);
   });
 
   // Teste se os dois itens dentro do array retornado pela função são objetos.
@@ -65,5 +65,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   // Teste se os dois productIds terminam com 123.
   test('Verify both produts ends with 123', () => {
     expect(productDetails('pente', 'cabide')[0]['details']['productId']).toEqual(expect.stringContaining('123'));
+    expect(productDetails('pente', 'cabide')[1]['details']['productId']).toEqual(expect.stringContaining('123'))
   });
 });

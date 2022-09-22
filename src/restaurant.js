@@ -99,29 +99,42 @@
  DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 */
 
-// function sum() {
-//   return ;
-// }
 const menu = {};
 
+const checkMatch = (key, object) => {
+  const array = menu.consumption;
+
+  for (const i of array) {
+    if (object[key][i]) {
+      return object[key][i];
+    }
+  }
+  return 0;
+};
+
+const sum = (object) => {
+  const keys = Object.keys(object);
+  let total = 0;
+
+  for (const i of keys) {
+    const check = checkMatch(i, object);
+    total += check;
+  }
+  return total * 1.1;
+};
+
 const waiter = (string) => {
-  menu.consumption.push(string);
-  return menu;
+  const clientOrders = menu.consumption;
+  clientOrders.push(string);
+  menu.consumption = clientOrders;
 };
 
 const createMenu = (object) => {
   menu.consumption = [];
-  menu.fetchmenu = () => object;
   menu.order = waiter;
-
+  menu.fetchmenu = () => object;
+  menu.pay = sum(menu.fetchmenu());
   return menu;
 };
-createMenu();
-waiter('coxinha');
-waiter('agua');
-waiter('sopa');
-waiter('sashimi');
 
-console.log(menu.consumption);
-
-module.exports = { createMenu, waiter, menu };
+module.exports = { createMenu, menu };

@@ -1,4 +1,4 @@
-const { createMenu, waiter } = require('../src/restaurant');
+const { createMenu, menu } = require('../src/restaurant');
  
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante através do qual será possível
@@ -98,7 +98,10 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
   // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
   // ao array retornado em `objetoRetornado.consumption`.
   test('Verify when call function `order` inside object with parameter return paramenter inside comsunption array', () => {
-    expect(createMenu().order(waiter('coxinha'))).toEqual(expect.objectContaining({ consumption: ['coxinha'] }));
+    createMenu();
+    menu.order('coxinha');
+    expect(menu).toHaveProperty('consumption');
+    expect(menu.consumption).toEqual(['coxinha']);
   })
 
     // const objetoRetornado = createMenu(objetoQualquer);
@@ -110,11 +113,12 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // --------------------------------------------------------------------------------------
 
   // TESTE 6: Verifique se, ao adicionar três pedidos, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.
-
   test('Verify when pass 3 orders, key `consumption` has an array with all them', () => {
-    expect((createMenu() && waiter('coxinha') && waiter('agua') && waiter('sopa') && waiter('sashimi')).expect(menu.consumption)).toEqual(['coxinha', 'agua', 'sopa', 'sashimi']);
+    const array = ['coxinha', 'agua', 'sopa', 'sashimi'];
+    createMenu();
+    array.forEach((i) => menu.order(i));
+    expect(menu.consumption).toEqual(['coxinha', 'agua', 'sopa', 'sashimi']);
   })
-
     // objetoRetornado.order("coxinha");
     // objetoRetornado.order("agua");
     // objetoRetornado.order("sopa");
@@ -126,10 +130,12 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // --------------------------------------------------------------------------------------
 
   // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a `consumption`.
-
-  // test('', () => {
-    
-  // })
+  test('Verify function `order` accept equal orders and add all of them in `consumption`', () => {
+    const array = ['coxinha', 'agua', 'coxinha'];
+    createMenu();
+    array.forEach((i) => menu.order(i));
+    expect(menu.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
+  })
 
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
@@ -140,10 +146,11 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // --------------------------------------------------------------------------------------
 
   // TESTE 8: Verifique se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`.
-
-  // test('', () => {
-    
-  // })
+  test('Verify calls `object.pay` return all orders prices sum', () => {
+    createMenu();
+    expect(menu).toHaveProperty('pay');
+    expect(menu.pay).toBe('somaDosPreçosDosPedidos');
+  })
   
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
