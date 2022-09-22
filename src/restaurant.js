@@ -116,10 +116,11 @@ const checkMatch = (key, object) => {
 const sum = (object) => {
   let total = 0;
   let keys;
+
   if (typeof object !== 'object') {
     return 0;
   } 
-    keys = Object.keys(object);
+  keys = Object.keys(object);
 
   for (const i of keys) {
     const check = checkMatch(i, object);
@@ -129,9 +130,7 @@ const sum = (object) => {
 };
 
 const waiter = (string) => {
-  const clientOrders = menu.consumption;
-  clientOrders.push(string);
-  menu.consumption = clientOrders;
+  menu.consumption.push(string);
 };
 
 const createMenu = (object) => {
