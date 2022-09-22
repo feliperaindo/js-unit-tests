@@ -84,7 +84,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
 
   // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
   test('Verify function "createMenu" return an object with key "consumption" with an empty array', () => {
-    expect(Array.isArray(createMenu().consumption)).toBe(true);
+    expect(Array.isArray(createMenu().consumption)).toBeTruthy();
     expect(createMenu().consumption.length).toBe(0);
   })
     // const objetoRetornado = createMenu(objetoQualquer);
@@ -149,7 +149,13 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
   test('Verify calls `object.pay` return all orders prices sum', () => {
     createMenu();
     expect(menu).toHaveProperty('pay');
-    expect(menu.pay).toBe('somaDosPreçosDosPedidos');
+    expect(menu.pay()).toBe(Number());
+
+    const test = createMenu({ food: { coxa: 10, asa: 7, coxinha: 3, brigadeiro: 4 }, drink: { agua: 2, refri: 5, beer: 5 } });
+    console.log(test);
+    const array = ['coxa', 'asa', 'coxinha', 'brigadeiro', 'agua', 'refri', 'beer', 'beer']
+    array.forEach( (i) => menu.order(i));
+    expect(menu.pay(menu.fetchmenu())).toBeCloseTo(45.1);
   })
   
     // objetoRetornado.order('coxinha');

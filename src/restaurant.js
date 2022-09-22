@@ -103,21 +103,23 @@ const menu = {};
 
 const checkMatch = (key, object) => {
   const array = menu.consumption;
+  let totalPerKey = 0;
 
   for (const i of array) {
     if (object[key][i]) {
-      return object[key][i];
+      totalPerKey += object[key][i];
     }
   }
-  return 0;
+  return totalPerKey;
 };
 
 const sum = (object) => {
-  let keys; 
-  const checkKeys = (Object.keys(object))
-  ? keys = Object.keys(object)
-  : keys = 0;
   let total = 0;
+  let keys;
+  if (typeof object !== 'object') {
+    return 0;
+  } 
+    keys = Object.keys(object);
 
   for (const i of keys) {
     const check = checkMatch(i, object);
@@ -134,9 +136,10 @@ const waiter = (string) => {
 
 const createMenu = (object) => {
   menu.consumption = [];
-  menu.order = waiter;
   menu.fetchmenu = () => object;
-  menu.pay = sum(menu.fetchmenu());
+  menu.order = waiter;
+  menu.pay = sum;
+
   return menu;
 };
 
