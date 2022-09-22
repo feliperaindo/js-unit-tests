@@ -17,9 +17,7 @@
 
 const createStudent = (string) => ({
     name: string,
-    feedback: function phrase() {
-      return 'Eita pessoa boa!';
-    },
+    feedback: () => 'Eita pessoa boa!',
   });
 
 console.log(createStudent('Leandro, o lobo solitário'));

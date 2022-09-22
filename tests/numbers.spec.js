@@ -18,27 +18,27 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
 
   // Escreva um teste em que verifica se a função retorna true
   test('Verify if function `numbers` return `true` when an array with only number is received', () => {
-    expect(numbers([1])).toBe(true);
+    expect(numbers([1])).toBeTruthy();
   });
 
   // Escreva um teste em que verifica se a função retorna false
   test('Verify if function `numbers` return `false` when an array with no numbers is received', () => {
-    expect(numbers(['ane', 4, true, 7, 'text'])).toBe(false);
+    expect(numbers(['ane', 4, true, 7, 'text'])).toBeFalsy();
   })
 
   // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
   test('Verify if function `numbers` return `true` when an array [1, 2, 3, 4, 5] is a parameter', () => {
-    expect(numbers([1, 2, 3, 4, 5])).toBe(true);
+    expect(numbers([1, 2, 3, 4, 5])).toBeTruthy();
   });
 
   // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
   test('Verify if function `numbers` return `false` when an array [1, 2, "3", 4, 5] is a parameter', () => {
-    expect(numbers([1, 2, '3', 4, 5])).toBe(false);
+    expect(numbers([1, 2, '3', 4, 5])).toBeFalsy();
   })
 
   // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
   test('Verify if function `numbers` return `false` when an array [1, "a", 3] is a parameter', () => {
-    expect(numbers([1, 'a', 3])).toBe(false);
+    expect(numbers([1, 'a', 3])).toBeFalsy();
   })
 
   // Escreva um teste em que a função recebe [' '] e retorna false

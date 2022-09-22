@@ -99,24 +99,29 @@
  DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 */
 
-function waiter(string) {
-  
-}
+// function sum() {
+//   return ;
+// }
+const menu = {};
 
-function sum() {
-  return ;
-}
+const waiter = (string) => {
+  menu.consumption.push(string);
+  return menu;
+};
 
-const createMenu = (object) => { 
-  const menu = {
-    fetchmenu: object,
-    consumption: [],
-    order: waiter(),
-    pay: sum(),
-  };
+const createMenu = (object) => {
+  menu.consumption = [];
+  menu.fetchmenu = () => object;
+  menu.order = waiter;
 
   return menu;
 };
-createMenu({ food: 'coxa', drink: 'água' });
+createMenu();
+waiter('coxinha');
+waiter('agua');
+waiter('sopa');
+waiter('sashimi');
 
-module.exports = createMenu;
+console.log(menu.consumption);
+
+module.exports = { createMenu, waiter, menu };
