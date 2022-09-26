@@ -128,4 +128,4 @@ const createMenu = (object) => {
   return menu;
 };
 
-export default { createMenu, menu };
+module.exports = { createMenu, menu };

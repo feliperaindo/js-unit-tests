@@ -1,4 +1,4 @@
-import productDetails from '../src/productDetails';
+const productDetails = require('../src/productDetails.js');
 /*
   A função productDetails recebe duas strings que representam nomes de produtos, e retorna um array contendo dois objetos com os detalhes dos respectivos produtos.
 

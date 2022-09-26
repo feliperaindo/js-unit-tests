@@ -10,4 +10,4 @@
 
 const numbers = (myArray) => (myArray.every((i) => (typeof i === 'number')));
 
-export default numbers;
+module.exports = numbers;

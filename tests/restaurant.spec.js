@@ -1,4 +1,4 @@
-import { createMenu, menu } from '../src/restaurant';
+const { createMenu, menu } = require('../src/restaurant.js');
  
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante através do qual será possível
