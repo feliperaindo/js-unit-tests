@@ -101,31 +101,17 @@
 
 const menu = {};
 
-const checkMatch = (key, object) => {
-  const array = menu.consumption;
-  let totalPerKey = 0;
-
-  for (const i of array) {
-    if (object[key][i]) {
-      totalPerKey += object[key][i];
-    }
-  }
-  return totalPerKey;
-};
-
 const sum = (object) => {
   let total = 0;
-  let keys;
+  const array = menu.consumption;
 
-  if (typeof object !== 'object') {
-    return 0;
-  } 
-  keys = Object.keys(object);
+  if (typeof object !== 'object') { return 0; }
 
-  for (const i of keys) {
-    const check = checkMatch(i, object);
-    total += check;
-  }
+  const keys = Object.keys(object).forEach((key) => {
+    const check = array.filter((index) => object[key][index])
+    .forEach((newIndex) => { total += object[key][newIndex]; });
+  });
+
   return total * 1.1;
 };
 
