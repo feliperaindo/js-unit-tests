@@ -22,4 +22,4 @@ const createStudent = (string) => ({
 
 console.log(createStudent('Leandro, o lobo solitário'));
 
-module.exports = createStudent;
+export default createStudent;

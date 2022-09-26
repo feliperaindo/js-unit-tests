@@ -25,4 +25,4 @@ const average = (array) => {
   return Math.round(x / array.length);
 };
 
-module.exports = average;
+export default average;

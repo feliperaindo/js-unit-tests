@@ -142,4 +142,4 @@ const createMenu = (object) => {
   return menu;
 };
 
-module.exports = { createMenu, menu };
+export default { createMenu, menu };

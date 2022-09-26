@@ -30,4 +30,4 @@ const circle = (radius) => {
   };
 };
 
-module.exports = circle;
+export default circle;

@@ -29,4 +29,4 @@ trabalho na Trybe e mando muito em programação!
 return check;
 };
 
-module.exports = vqv;
+export default vqv;

@@ -43,4 +43,4 @@ const calculator = (number1, number2) => ({
 
 const arrayGenerator = (type, object) => Object[type](object);
 
-module.exports = { calculator, arrayGenerator };
+export default { calculator, arrayGenerator };
