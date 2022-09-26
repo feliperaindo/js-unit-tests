@@ -8,13 +8,6 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
-const numbers = (myArray) => {
-  for (const i of myArray) {
-    if (typeof i !== 'number') {
-      return false;
-    }
-  }
-  return true;
-};
+const numbers = (myArray) => (myArray.every((i) => (typeof i === 'number')));
 
 export default numbers;
